@@ -132,33 +132,6 @@ int ydot = 0;
 
 int dotcolor = Blue;//variable for the color of the player
 
-int xclear = 0;//clear button
-int yclear = 0;
-
-int xred = 0;//red color - press "a" to change the color
-int yred = 7;
-
-int xorange = 1;//orange color
-int yorange = 7;
-
-int xyellow = 2;//yellow color
-int yyellow = 7;
-
-int xgreen = 3;//green color
-int ygreen = 7;
-
-int xblue = 4;//blue color
-int yblue = 7;
-
-int xpurple = 5;//purple color
-int ypurple = 7;
-
-int xpink = 6;//pink color
-int ypink = 7;
-
-int xwhite = 7;//white color
-int ywhite = 7;
-
 void loop()//run over and over again
 {
   ClearSlate();
@@ -200,7 +173,7 @@ void loop()//run over and over again
    {
     DrawPx(pixelArray[i].x, pixelArray[i].y, pixelArray[i].color);
    }//draws the canvas/pixelArray to the screen
-    DrawPx(xclear, yclear, Red);//draws the clear button
+    DrawPx(0, 0, Red);//draws the clear button
     DrawPx(xdot, ydot, dotcolor);//draws the player
     DisplaySlate();//displays the player and pallet to the screen
     delay(200);//waits a little bit
@@ -208,35 +181,35 @@ void loop()//run over and over again
   
 void Pallet()//function that draws the pallet at the top
 {
-  DrawPx(xred, yred, Red);//draws the red color
-  DrawPx(xorange, yorange, Orange);//draws the orange color
-  DrawPx(xyellow, yyellow, Yellow);//draws the yellow color
-  DrawPx(xgreen, ygreen, Green);//draws the green color
-  DrawPx(xblue, yblue, Blue);//draws the blue color
-  DrawPx(xpurple, ypurple, Violet);//draws the purple color
-  DrawPx(xpink, ypink, DimViolet);//draws the pink color
-  DrawPx(xwhite, ywhite, White);//draws the white color
+  DrawPx(0, 7, Red);//draws the red color
+  DrawPx(1, 7, Orange);//draws the orange color
+  DrawPx(2, 7, Yellow);//draws the yellow color
+  DrawPx(3, 7, Green);//draws the green color
+  DrawPx(4, 7, Blue);//draws the blue color
+  DrawPx(5, 7, Violet);//draws the purple color
+  DrawPx(6, 7, DimViolet);//draws the pink color
+  DrawPx(7, 7, White);//draws the white color
 }
 
 void Color()//function that changes the color of the brush or clears the screen
 {
-if (xdot == xred && ydot == yred)//checks to see if the player is on the red dot
+if (xdot == 0 && ydot == 7)//checks to see if the player is on the red dot
     dotcolor = Red;//makes the player red
-  if (xdot == xorange && ydot == yorange)//checks to see if the player is on the orange dot
+  if (xdot == 1 && ydot == 7)//checks to see if the player is on the orange dot
     dotcolor = Orange;//makes the player orange
-  if (xdot == xyellow && ydot == yyellow)//checks to see if the player is on the yellow dot
+  if (xdot == 2 && ydot == 7)//checks to see if the player is on the yellow dot
     dotcolor = Yellow;//makes the player yellow
-  if (xdot == xgreen && ydot == ygreen)//checks to see if the player is on the green dot
+  if (xdot == 3 && ydot == 7)//checks to see if the player is on the green dot
     dotcolor = Green;//makes the player yellow
-  if (xdot == xblue && ydot == yblue)//checks to see if the player is on the blue dot
+  if (xdot == 4 && ydot == 7)//checks to see if the player is on the blue dot
     dotcolor = Blue;//makes the player blue
-  if (xdot == xpurple && ydot == ypurple)//checks to see if the player is on the purple dot
+  if (xdot == 5 && ydot == 7)//checks to see if the player is on the purple dot
     dotcolor = Violet;//makes the player purple
-  if (xdot == xpink && ydot == ypink)//checks to see if the player is on the purple dot
+  if (xdot == 6 && ydot == 7)//checks to see if the player is on the purple dot
     dotcolor = DimViolet;//makes the player pink
-  if (xdot == xwhite && ydot == ywhite)//checks to see if the player is on the white dot
+  if (xdot == 7 && ydot == 7)//checks to see if the player is on the white dot
     dotcolor = White;//makes the player white
-  if (xdot == xclear && ydot == yclear)//checks to see if the player is on the clear button
+  if (xdot == 0 && ydot == 0)//checks to see if the player is on the clear button
     for (int i = 0; i<56; i++)
     {
     pixelArray[i].color = Dark;//sets the canvas area to "dark" basically "clears" the screen
